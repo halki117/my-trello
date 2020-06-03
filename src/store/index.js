@@ -7,7 +7,7 @@ const savedLists = localStorage.getItem('trello-lists')
 
 const store = new Vuex.Store({
   state: {
-    lists: savedLists ? JSON.parce(savedLists): [
+    lists: savedLists ? JSON.parse(savedLists): [
       {
         title: 'Backlog',
         cards: [

@@ -47,7 +47,7 @@ main {
   padding: 20px 15px;
   width: calc(100% - 30px);
   background-color: #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
   font-family: "Noto Sans Japanese", "Noto Sans", 'system-ui', sans-serif;

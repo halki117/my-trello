@@ -5,6 +5,7 @@
   </div>
 </template>
 
+
 <script>
 // インポート文を追加
 import Board from './components/Board.vue'
