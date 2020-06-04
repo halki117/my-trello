@@ -7,7 +7,7 @@
            @focusin = "startEditing"
            @focusout = "finishEditing"
     >
-    <button type="submit" class="add-button">
+    <button type="submit" class="add-button" v-if="isEditing || titleExists">
       Add
     </button>
   </form>
@@ -27,12 +27,18 @@ export default {
       if (this.isEditing) {
         classList.push('active')
       }
+      if (this.titleExists) {
+        classList.push('addable')
+      }
       return classList
     },
+    titleExists() {
+      return this.title.length > 0
+    }
   },
   methods: {
     addList() {
-      this.$store.dispatch('addlist', this.title )
+      this.$store.dispatch('addlist', { title: this.title } )
       this.title = ''
     },
     startEditing() {
