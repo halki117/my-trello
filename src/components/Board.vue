@@ -20,7 +20,7 @@
 <script>
   import ListAdd from './ListAdd'
   import List from './List'
-  import { mapState} from 'vuex'
+  import { mapState } from 'vuex'
   export default {
     components: {
       ListAdd,

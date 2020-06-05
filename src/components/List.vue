@@ -4,11 +4,17 @@
       <p class="list-title">{{ title }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
+    <card-add :listIndex="listIndex" />
   </div>
 </template>
 
 <script>
+import CardAdd from './CardAdd'
+
 export default {
+  components: {
+    CardAdd
+  },
   props: {
     title: {
       type: String,
@@ -22,7 +28,7 @@ export default {
   methods: {
     removeList: function() {
       if(confirm('本当にこのリストを削除しますか？')){
-        this.$store.dispatch('removelist', {listIndex: this.list} )
+        this.$store.dispatch('removelist', {listIndex: this.listIndex} )
       }
     },
   }
