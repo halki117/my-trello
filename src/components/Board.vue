@@ -5,7 +5,7 @@
     </header>
     <main>
       <p class="info-line">All: {{ totalCardCount }} tasks</p>
-      <draggable :list="lists" @end="movingList" class="list-index">
+      <draggable :list="lists" @end="movingList" class="list-index" :animation=200>
         <list v-for="(item, index) in lists"
               :key="item.id"
               :title="item.title"
@@ -44,7 +44,7 @@
       },
       movingList: function() {
         this.$store.dispatch('updateList', { lists: this.lists})
-      }
-    },
+      },
+    }
   }
 </script>
